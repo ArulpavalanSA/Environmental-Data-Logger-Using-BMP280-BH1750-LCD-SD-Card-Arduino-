@@ -1,0 +1,13 @@
+# Wokwi Library List
+# See https://docs.wokwi.com/guides/libraries
+
+# Automatically added based on includes:
+LiquidCrystal I2C
+SD
+
+Adafruit Unified Sensor
+Adafruit Sensor Lab
+BMP280
+BH1750
+I2C
+LedDisplay

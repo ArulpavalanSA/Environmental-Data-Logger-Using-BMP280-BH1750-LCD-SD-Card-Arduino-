@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "author": "Arulpavalan S A",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -316.2, "left": 76.2, "attrs": {} },
+    {
+      "type": "chip-bmp280",
+      "id": "chip1",
+      "top": -477.8,
+      "left": 418.62,
+      "rotate": 270,
+      "attrs": {}
+    },
+    { "type": "chip-bh1750", "id": "chip2", "top": 49.02, "left": 177.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 25.6,
+      "left": 476,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-microsd-card", "id": "sd1", "top": -124.57, "left": -259.13, "attrs": {} }
+  ],
+  "connections": [
+    [ "uno:5V", "chip2:VCC", "red", [ "v105.5", "h71", "v76.8" ] ],
+    [ "uno:5V", "lcd1:VCC", "red", [ "v86.3", "h205.4", "v105.6" ] ],
+    [ "uno:GND.2", "chip2:GND", "black", [ "v95.9", "h71.1", "v105.6" ] ],
+    [ "uno:GND.2", "lcd1:GND", "black", [ "v76.7", "h205.5", "v105.6" ] ],
+    [ "uno:A5", "chip2:SCL", "green", [ "v47.9", "h-206.9", "v124.8" ] ],
+    [ "uno:A4", "chip2:SDA", "green", [ "v38.3", "h-216.6", "v153.6" ] ],
+    [ "uno:A4", "lcd1:SDA", "green", [ "v38.3", "h100.2", "v163.2" ] ],
+    [ "uno:A5", "lcd1:SCL", "green", [ "v47.9", "h81.1", "v163.2" ] ],
+    [ "uno:5V", "sd1:VCC", "red", [ "v86.3", "h-303.4", "v-38.4", "h9.6" ] ],
+    [ "uno:GND.2", "sd1:GND", "black", [ "v76.7", "h-322.5", "v-48" ] ],
+    [ "sd1:CS", "uno:10", "green", [ "h211.2", "v-297.54", "h67.2" ] ],
+    [ "sd1:SCK", "uno:13", "green", [ "h201.6", "v-259.21", "h172.8" ] ],
+    [ "uno:5V", "chip1:VCC", "red", [ "v19.1", "h215", "v-288" ] ],
+    [ "uno:GND.2", "chip1:GND", "black", [ "v28.7", "h215.1" ] ],
+    [ "chip1:SCK", "uno:13", "green", [ "v9.6", "h-230.4", "v0", "h-38.4" ] ],
+    [ "chip1:SDI", "uno:11", "green", [ "v19.2", "h-9.6" ] ],
+    [ "chip1:SDO", "uno:12", "green", [ "v28.8", "h-288" ] ],
+    [ "chip1:CS", "uno:9", "green", [ "v48", "h-9.6" ] ],
+    [ "sd1:DO", "uno:12", "green", [ "h192", "v-259.09", "h201.6" ] ],
+    [ "sd1:DI", "uno:11", "green", [ "h220.8", "v-268.89", "h9.6" ] ]
+  ],
+  "dependencies": {}
+}
